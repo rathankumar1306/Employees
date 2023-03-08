@@ -111,17 +111,9 @@ class EmployeesController extends Controller
    
     public function index()
     {
-    //     $employees = Employees::all();
-    //   return view ('employees.index')->with('employees', $employees);
-          $employees = Employees::latest()->paginate(10);
+          $employees = Employees::orderBy('name')->orderBy('email')->paginate(10);
         return view('employees.index',compact('employees'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-
-            $products = Product::latest()->paginate(5);
-            return view('products.index',compact('products'))
-                ->with('i', (request()->input('page', 1) - 1) * 5);
-    
-        
     }
 
     

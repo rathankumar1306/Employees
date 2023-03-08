@@ -71,22 +71,28 @@ tr:nth-child(even) {
    
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
+            <th>Employee ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Gender</th>
+            <th>Phone</th>
+
             <th width="280px">Action</th>
         </tr>
-        @foreach ($employees as $employees)
-        <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $employees->name }}</td>
-            <td>{{ $employees->email }}</td>
+        
+        @foreach ($employees as $employe)
+        <tr> <p>
+            <td>{{ $employe->id  }}</td>
+            <td>{{ $employe->name }}</td>
+            <td>{{ $employe->email }}</td>
+            <td>{{ $employe->gender }}</td>
+            <td>{{ $employe->phone }}</td>
             <td>
-                <form action="{{ route('employees.destroy',$employees->id) }}" method="POST">
+                <form action="{{ route('employees.destroy',$employe->id) }}" method="POST">
    
-                    <a class="button show" href="{{ route('employees.show',$employees->id) }}">Show</a>
+                    <a class="button show" href="{{ route('employees.show',$employe->id) }}">Show</a>
     
-                    <a class="button success" href="{{ route('employees.edit',$employees->id) }}">Edit</a>
+                    <a class="button success" href="{{ route('employees.edit',$employe->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
@@ -96,6 +102,8 @@ tr:nth-child(even) {
             </td>
         </tr>
         @endforeach
+
     </table>
+    {{ $employees->links() }}
       
 @endsection

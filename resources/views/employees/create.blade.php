@@ -72,10 +72,17 @@ tr:nth-child(even) {
         <tr>
             <th>Name</th>
             <th>Email</th>
+            <th>Gender</th>
+            <th>Phone</th>
         </tr>
         <tr>
         <td><input type="text" name="name" style="height:30px; width :200px;" class="form-control" placeholder="Name"></td>
         <td><input class="form-control" style="height:30px; width :200px;"  name="email" placeholder="Email"></td>
+        <td><select name="gender" style="height:30px; width :200px;" class="form-control" placeholder="Gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select></td>
+<td><input type="number" class="form-control" style="height:30px; width :200px;"  name="phone" placeholder="Phone"></td>
         </tr>
     </table>
 
