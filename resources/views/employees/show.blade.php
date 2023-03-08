@@ -9,6 +9,8 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  padding-top :30px;
+
 }
 
 td, th {
@@ -20,23 +22,30 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
 </style>
 </head>
 <body>
 
 <h2>{{ $employees->name }} - Details</h2>
-<div>
-                <a class="btn btn-primary" href="{{ route('employees.index') }}"> <-Back</a>
+<div class="table" >
+<a class="btn btn-primary" href="{{ route('employees.index') }}"> <-Back</a>
 </div>
 
-<table>
+<table class="table" >
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Gender</th>
+    <th>Phone</th>
+
   </tr>
   <tr>
     <td>{{ $employees->name }}</td>
     <td>{{ $employees->email }}</td>
+    <td>{{ $employees->gender }}</td>
+    <td>{{ $employees->phone }}</td>
+
   </tr>
 </table>
 

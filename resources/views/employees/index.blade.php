@@ -38,6 +38,10 @@ tr:nth-child(even) {
     background-color:green;
     color:white;
 }
+.view{
+    background-color:blue;
+    color:white;
+}
 .add{
     background-color:green;
     color:white;
@@ -58,15 +62,20 @@ tr:nth-child(even) {
                 <h2>Employees Dashboard</h2>
             </div>
             <div>
-                <a class="button add" href="{{ route('employees.create') }}"> Create New user</a>
+                <a class="button add" href="{{ route('employees.create') }}"> Create New Employee</a>
             </div>
         </div>
     </div>
    
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
+        <!-- <div class="alert alert-success">
             <p>{{ $message }}</p>
-        </div>
+        </div> -->
+
+        <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ $message }} 
+</div>  
     @endif
    
     <table class="table table-bordered">
@@ -90,7 +99,7 @@ tr:nth-child(even) {
             <td>
                 <form action="{{ route('employees.destroy',$employe->id) }}" method="POST">
    
-                    <a class="button show" href="{{ route('employees.show',$employe->id) }}">Show</a>
+                    <a class="button view" href="{{ route('employees.show',$employe->id) }}">Show</a>
     
                     <a class="button success" href="{{ route('employees.edit',$employe->id) }}">Edit</a>
    

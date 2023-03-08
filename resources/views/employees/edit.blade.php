@@ -36,14 +36,19 @@ tr:nth-child(even) {
 
 .table-bordered{
   padding-bottom:20px;
-
+}
+.back{
+  padding-top:50px;
 
 }
 </style>
 @section('content')
-<form action="{{ route('employees.update',$employees->id) }}" method="POST">
+
+<form class="back" action="{{ route('employees.update',$employees->id) }}" method="POST">
 @csrf
 @method('PUT')
+<a class="btn btn-primary button" href="{{ route('employees.index') }}"> <-Back</a>
+
 <h3>EDIT EMPLOYEE</h3>
     <table class="table table-bordered">
         <tr>

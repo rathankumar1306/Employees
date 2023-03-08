@@ -39,8 +39,16 @@ tr:nth-child(even) {
 
 .table-bordered{
   padding-bottom:20px;
+}
+.row{
+    padding-top:20px;
 
-
+}
+.pull-right{
+    padding-bottom:20px;
+}
+.back{
+    width:70px;
 }
 </style>
 @section('content')
@@ -50,7 +58,7 @@ tr:nth-child(even) {
             <h2>Add New Employ</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('employees.index') }}"> Back</a>
+            <a class="btn btn-primary back" href="{{ route('employees.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -76,9 +84,9 @@ tr:nth-child(even) {
             <th>Phone</th>
         </tr>
         <tr>
-        <td><input type="text" name="name" style="height:30px; width :200px;" class="form-control" placeholder="Name"></td>
-        <td><input class="form-control" style="height:30px; width :200px;"  name="email" placeholder="Email"></td>
-        <td><select name="gender" style="height:30px; width :200px;" class="form-control" placeholder="Gender">
+        <td><input type="text" name="name" style="height:30px; width :150px;" class="form-control" placeholder="Name"></td>
+        <td><input class="form-control" style="height:30px; width :300px;"  name="email" placeholder="Email"></td>
+        <td><select name="gender" style="height:30px; width :100px;" class="form-control" placeholder="Gender">
     <option value="Male">Male</option>
     <option value="Female">Female</option>
 </select></td>
